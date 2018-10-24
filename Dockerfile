@@ -5,7 +5,6 @@ COPY . /app
 
 EXPOSE 5000
 
-RUN easy-install install Pillow
 #RUN python -m pip install --upgrade pip
 RUN pip install -r requirements.txt
 #CMD FLASK_APP=api.py flask run --host="::"
