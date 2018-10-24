@@ -1,4 +1,6 @@
-FROM frolvlad/alpine-python3
+FROM alpine:edge
+
+RUN apk update && apk add build-base  postgresql-devel libpq-dev python3 python3-dev 
 
 WORKDIR /app
 COPY . /app
