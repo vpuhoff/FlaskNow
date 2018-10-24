@@ -1,6 +1,6 @@
 FROM alpine:edge
 
-RUN apk update && apk add build-base   postgresql-client postgresql-devel python3 python3-dev 
+RUN apk update && apk add build-base   postgresql-client postgresql-devel python3 python3-dev   libpq-dev python-dev
 
 WORKDIR /app
 COPY . /app
