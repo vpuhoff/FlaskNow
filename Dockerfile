@@ -1,6 +1,7 @@
 FROM alpine:edge
-
-RUN apk update && apk add build-base   postgresql-client postgresql-devel python3 python3-dev   libpq-dev python-dev
+RUN sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" >> /etc/apt/sources.list.d/pgdg.list'
+RUN wget -q https://www.postgresql.org/media/keys/ACCC4CF8.asc -O - | sudo apt-key add -
+RUN apk update && apk add build-base  postgresql-contrib  postgresql-client postgresql-devel python3 python3-dev   libpq-dev python-dev
 
 WORKDIR /app
 COPY . /app
